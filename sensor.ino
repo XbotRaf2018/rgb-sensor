@@ -20,6 +20,7 @@ int currentPointer = 0;
 
 int colors[] = {ORANGE, BLACK, GREEN, YELLOW, BLUE};
 
+#if DEBUG == 1
 int callibration[][3] = {
 	{0, 0, 0}, // ORANGE
 	{0, 0, 0}, // BLACK
@@ -27,6 +28,7 @@ int callibration[][3] = {
 	{0, 0, 0}, // YELLOW
 	{0, 0, 0}, // BLUE
 };
+#endif
 
 char colorNames[][15] = {
 	"ORANGE",
@@ -69,13 +71,13 @@ void setup() {
 
 // Loop
 
-void setLedColor(bool red, int green, int blue, int redLed, int greenLed, blueLed){
+void setLedColor(bool red, int green, int blue, int redLed, int greenLed, int blueLed){
 	digitalWrite(redLed, red);
 	digitalWrite(blueLed, green);
 	digitalWrite(blueLed, blue);
 }
 
-void rgbSensorLoop(int analogIn, int redLed, int greenLed, int blueLed) {
+void rgbSensorLoop(int analogIn, int redLed, int greenLed, int blueLed, int* callibration) {
 	#if DEBUG == 1
 		currentPointer++;
 		currentPointer %= 5;
@@ -123,7 +125,7 @@ void rgbSensorLoop(int analogIn, int redLed, int greenLed, int blueLed) {
 
 #if DEBUG == 1
 void loop() {
-	rgbSensorLoop(ANALOG_IN, RED_LED, GREEN_LED, BLUE_LED);
+	rgbSensorLoop(ANALOG_IN, RED_LED, GREEN_LED, BLUE_LED, (int*)callibration);
 }
 #endif
 
