@@ -7,6 +7,7 @@ Library from getting color of object using LED diodes (RED, GREEN, BLUE) and pho
 <!-- vim-markdown-toc GFM -->
 
 * [Notes](#notes)
+* [Callibration tutorial](#callibration-tutorial)
 * [Todo](#todo)
 * [Authors](#authors)
 
@@ -15,6 +16,8 @@ Library from getting color of object using LED diodes (RED, GREEN, BLUE) and pho
 ## Notes
 
 Make sure you unset DEBUG flag in ``sensor.ino`` before using this as a Library. 
+
+## Callibration tutorial
 
 ## Todo
 
