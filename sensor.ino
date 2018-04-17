@@ -48,7 +48,7 @@ char colorNames[][15] = {
 
 // Sensor settings
 
-#define DELAY 100
+#define DELAY 500
 #define TRESHOLD 100
 
 // Setup
@@ -71,9 +71,9 @@ void setup() {
 
 // Loop
 
-void setLedColor(bool red, int green, int blue, int redLed, int greenLed, int blueLed){
+void setLedColor(int red, int green, int blue, int redLed, int greenLed, int blueLed){
 	digitalWrite(redLed, red);
-	digitalWrite(blueLed, green);
+	digitalWrite(greenLed, green);
 	digitalWrite(blueLed, blue);
 }
 
