@@ -63,6 +63,12 @@ void setup() {
 
 // Loop
 
+void setLedColor(bool red, int green, int blue, int redLed, int greenLed, blueLed){
+	digitalWrite(redLed, red);
+	digitalWrite(blueLed, green);
+	digitalWrite(blueLed, blue);
+}
+
 void rgbSensorLoop(int analogIn, int redLed, int greenLed, int blueLed) {
 	#if DEBUG == 1
 		currentPointer++;
@@ -77,9 +83,7 @@ void rgbSensorLoop(int analogIn, int redLed, int greenLed, int blueLed) {
 
 	// RED
 
-	digitalWrite(redLed, 1);
-	digitalWrite(blueLed, 0);
-	digitalWrite(blueLed, 0);
+	setLedColor(1, 0, 0, redLed, greenLed, blueLed);
 
 	delay(DELAY);
 
@@ -89,9 +93,7 @@ void rgbSensorLoop(int analogIn, int redLed, int greenLed, int blueLed) {
 
 	// GREEN
 
-	digitalWrite(redLed, 0);
-	digitalWrite(blueLed, 1);
-	digitalWrite(blueLed, 0);
+	setLedColor(0, 1, 0, redLed, greenLed, blueLed);
 
 	delay(DELAY);
 
@@ -101,9 +103,7 @@ void rgbSensorLoop(int analogIn, int redLed, int greenLed, int blueLed) {
 
 	// BLUE
 
-	digitalWrite(redLed, 0);
-	digitalWrite(blueLed, 0);
-	digitalWrite(blueLed, 1);
+	setLedColor(0, 0, 1, redLed, greenLed, blueLed);
 
 	delay(DELAY);
 
@@ -112,9 +112,7 @@ void rgbSensorLoop(int analogIn, int redLed, int greenLed, int blueLed) {
 	delay(DELAY);
 
 	// Turn all of, to save energy
-	digitalWrite(redLed, 0);
-	digitalWrite(blueLed, 0);
-	digitalWrite(blueLed, 0);
+	setLedColor(0, 0, 0, redLed, greenLed, blueLed);
 }
 
 void loop() {
