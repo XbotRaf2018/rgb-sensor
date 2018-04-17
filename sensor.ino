@@ -1,3 +1,7 @@
+/*
+This library is for detecting color of objectu using photo transistor and RGB LED.
+*/
+
 // Stuff for circuit simullation
 
 #define DEBUG 1
@@ -55,11 +59,13 @@ void rgbSensorInit(int analogIn, int redLed, int greenLed, int blueLed) {
 	pinMode(greenLed, OUTPUT);
 }
 
+#if DEBUG == 1
 void setup() { 
 	Serial.begin(115200);
 
 	rgbSensorInit(ANALOG_IN, RED_LED, GREEN_LED, BLUE_LED); // Init rgb sensor on A1
 }
+#endif
 
 // Loop
 
@@ -115,7 +121,9 @@ void rgbSensorLoop(int analogIn, int redLed, int greenLed, int blueLed) {
 	setLedColor(0, 0, 0, redLed, greenLed, blueLed);
 }
 
+#if DEBUG == 1
 void loop() {
 	rgbSensorLoop(ANALOG_IN, RED_LED, GREEN_LED, BLUE_LED);
 }
+#endif
 
