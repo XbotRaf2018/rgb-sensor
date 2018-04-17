@@ -25,7 +25,9 @@ void setup(){
 
 	pinMode(PHOTO_TRANSISTOR_OUT, OUTPUT);
 
-	Serial.begin(115200);
+	Serial.begin(9600);
+
+	randomSeed(analogRead(0));
 }
 
 void loop(){
