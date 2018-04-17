@@ -2,13 +2,32 @@
 This is simple sketch that simulates RGB LED and photo transistor. 
 */
 
+// IO
+
+#define RED_LED_IN D13
+#define GREEN_LED_IN D12
+#define BLUE_LED_IN D11
+
+#define PHOTO_TRANSISTOR_OUT D7
+
+// Colors
+
+#define ORANGE 0
+#define BLACK 1
+#define GREEN 2
+#define YELLOW 3
+#define BLUE 4
+
 void setup(){
-	pinMode(13, OUTPUT);
+	pinMode(RED_LED_IN, INPUT);
+	pinMode(GREEN_LED_IN, INPUT);
+	pinMode(BLUE_LED_IN, INPUT);
+
+	pinMode(PHOTO_TRANSISTOR_OUT, OUTPUT);
+
+	Serial.begin(115200);
 }
 
 void loop(){
-	digitalWrite(13, HIGH);
-	delay(1000); // Wait for 1000 millisecond(s)
-	digitalWrite(13, LOW);
-	delay(1000); // Wait for 1000 millisecond(s)
 }
+
