@@ -7,7 +7,7 @@ This library is for detecting color of objectu using photo transistor and RGB LE
 #define DEBUG 1
 
 #if DEBUG == 1
-int currentPointer = 0;
+int currentPointer = -1;
 #endif
 
 // Color definitions
@@ -63,7 +63,7 @@ void rgbSensorInit(int analogIn, int redLed, int greenLed, int blueLed) {
 
 #if DEBUG == 1
 void setup() { 
-	Serial.begin(115200);
+	Serial.begin(9600);
 
 	rgbSensorInit(ANALOG_IN, RED_LED, GREEN_LED, BLUE_LED); // Init rgb sensor on A1
 }
